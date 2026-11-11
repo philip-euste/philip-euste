@@ -25,18 +25,18 @@ jobs:
             -H "Accept: application/vnd.github+json" \
             https://api.github.com/user
 
-      - name: generate trophy.svg
-        uses: Erik-Donath/github-profile-trophy@feature/generate-svg
-        with:
-          username: ${{ github.repository_owner }}
-          file: dist/trophy.svg
-          token: ${{ secrets.GITHUB_TOKEN }}
-          theme: discord
-          max-rows: 1
-          margin-width: 8
-          margin-height: 8
-          no-background: false
-          no-frame: false
+- name: generate trophy.svg
+  uses: Erik-Donath/github-profile-trophy@feature/generate-svg
+  with:
+    username: ${{ github.repository_owner }}
+    file: dist/trophy.svg
+    token: ${{ secrets.PROFILE_STATS_TOKEN }}
+    theme: discord
+    max-rows: 1
+    margin-width: 8
+    margin-height: 8
+    no-background: false
+    no-frame: false
 
       - name: push trophy.svg to the output branch
         uses: crazy-max/ghaction-github-pages@v3.1.0
